@@ -11,47 +11,35 @@ struct PlayersView: View {
     
     private let team: Team
     
-    private var columns: [GridItem] {
-        Array(repeating: GridItem(.flexible(), spacing: 0, alignment: .center),
-              count: 1)
-    }
-    
     var body: some View {
-        VStack {
-            Text("\(team.name)")
-                .font(Font.system(size: 32).bold())
-                .foregroundColor(Color.black)
-                .padding(.vertical, 72)
-            GeometryReader { fullView in
-                ScrollView(.horizontal, showsIndicators: false) {
-                    LazyHGrid(rows: columns) {
-                        ForEach(team.players, id: \.id) { player in
-                            NavigationLink(
-                                destination: PlayerDetailsView(player: player)) {
-                                    PlayerCardView(player: player)
-                                        .frame(width: 250, height: 350)
-                                        .padding(.horizontal, 50)
-                                }
-                            }
+        GeometryReader { reader in
+            VStack {
+                Text("\(team.name)")
+                    .font(Font.system(size: 32).bold())
+                    .foregroundColor(Color.black)
+                HStack(alignment: .top, spacing: 30) {
+                    ForEach(team.players, id: \.id) { player in
+                        PlayerCardView(player: player)
+                            .frame(width: 250, height: 400)
                     }
-                    .padding(EdgeInsets(top: -144,
-                                        leading: (fullView.size.width - 350) / 2,
-                                        bottom: 0,
-                                        trailing: 0))
                 }
-                .navigationBarTitleDisplayMode(.inline)
-                .toolbar(content: {
-                    ToolbarItem(placement: .principal) {
-                        Image("\(team.image)")
-                            .resizable()
-                            .frame(width: 32, height: 32)
-                    }
-                })
-                .onTapGesture {
-                    print("TAP")
+                .modifier(ScrollingHStackModifier(items: team.players.count, itemWidth: 250, itemSpacing: 30))
+                .frame(width: reader.size.width, height: reader.size.height - 200)
+                .onDisappear {
+                    
                 }
             }
-        }.background(Color.background)
+            .frame(width: reader.size.width, height: reader.size.height, alignment: .center)
+            .background(Color.background)
+            .navigationBarTitleDisplayMode(.inline)
+            .toolbar(content: {
+                ToolbarItem(placement: .principal) {
+                    Image("\(team.image)")
+                        .resizable()
+                        .frame(width: 32, height: 32)
+                }
+            })
+        }
     }
     
     init(team: Team) {

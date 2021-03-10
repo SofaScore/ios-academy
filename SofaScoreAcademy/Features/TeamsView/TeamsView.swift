@@ -79,6 +79,19 @@ struct TeamsView: View {
         }
         .navigationViewStyle(StackNavigationViewStyle()) // bug fix: https://stackoverflow.com/questions/63740788/swiftui-displaymodebuttonitem-is-internally-managed
     }
+    
+    init() {
+        let coloredAppearance = UINavigationBarAppearance()
+        coloredAppearance.configureWithTransparentBackground()
+        coloredAppearance.backgroundColor = .clear
+        coloredAppearance.titleTextAttributes = [.foregroundColor: Color.secondaryText]
+        coloredAppearance.largeTitleTextAttributes = [.foregroundColor: Color.secondaryText]
+        
+        UINavigationBar.appearance().standardAppearance = coloredAppearance
+        UINavigationBar.appearance().compactAppearance = coloredAppearance
+        UINavigationBar.appearance().scrollEdgeAppearance = coloredAppearance
+        UINavigationBar.appearance().tintColor = .black
+    }
 }
 
 enum LayoutType {
