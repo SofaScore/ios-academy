@@ -1,5 +1,5 @@
 //
-//  PlayersViewModel.swift
+//  TeamDetailsViewModel.swift
 //  SofaScoreAcademy
 //
 //  Created by Matija Kruljac on 05.03.2021..
@@ -7,7 +7,7 @@
 
 import Foundation
 
-class PlayersViewModel {
+class TeamDetailsViewModel {
     
     func getPercentageOfForeignPlayers(for team: Team) -> Double {
         (Double(team.foreignPlayers) / Double(team.foreignPlayers + team.nationalTeamPlayers))

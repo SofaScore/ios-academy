@@ -27,12 +27,12 @@ struct TeamsView: View {
                     ForEach(data, id: \.id) { team in
                         if layoutType == .list {
                             NavigationLink(
-                                destination: PlayersView(team: team)) {
+                                destination: TeamDetailsView(team: team)) {
                                 TeamRowView(team: team)
                             }
                         } else {
                             NavigationLink(
-                                destination: PlayersView(team: team)) {
+                                destination: TeamDetailsView(team: team)) {
                                 TeamTileView(team: team)
                             }
                         }

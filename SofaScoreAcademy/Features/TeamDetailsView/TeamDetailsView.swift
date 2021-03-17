@@ -1,5 +1,5 @@
 //
-//  PlayersView.swift
+//  TeamDetailsView.swift
 //  SofaScoreAcademy
 //
 //  Created by Matija Kruljac on 05.03.2021..
@@ -7,10 +7,10 @@
 
 import SwiftUI
 
-struct PlayersView: View {
+struct TeamDetailsView: View {
     
     private let team: Team
-    private let viewModel = PlayersViewModel()
+    private let viewModel = TeamDetailsViewModel()
     
     var body: some View {
         GeometryReader { reader in
@@ -80,6 +80,6 @@ struct PlayersView: View {
 struct PlayerListView_Preview: PreviewProvider {
     static var previews: some View {
         let team = TeamsViewModel().getTeams().first!
-        return PlayersView(team: team)
+        return TeamDetailsView(team: team)
     }
 }

@@ -10,7 +10,7 @@ import Foundation
 class TeamsViewModel {
     
     func getTeams() -> [Team] {
-        let players = PlayersViewModel().getPlayers()
+        let players = TeamDetailsViewModel().getPlayers()
         return[Team(id: 1,
                     image: "fc-barcelona",
                     name: "Barcelona",
