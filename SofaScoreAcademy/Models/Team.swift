@@ -14,6 +14,8 @@ struct Team: Identifiable, Decodable {
     let name: String
     let foreignPlayers: Int
     let nationalTeamPlayers: Int
+    let wins: Int
+    let losses: Int
     let tournaments: [String]
     let coachName: String
     let foundationDate: String

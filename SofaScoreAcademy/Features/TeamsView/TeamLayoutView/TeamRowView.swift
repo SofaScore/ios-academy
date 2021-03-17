@@ -60,6 +60,8 @@ struct TeamRowView_Preview: PreviewProvider {
                         name: "Bayern",
                         foreignPlayers: 5,
                         nationalTeamPlayers: 5,
+                        wins: 10,
+                        losses: 15,
                         tournaments: ["1. league", "2. league"],
                         coachName: "Jose Mourinho",
                         foundationDate: "3.4.1899.",

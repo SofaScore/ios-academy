@@ -9,6 +9,24 @@ import Foundation
 
 class PlayersViewModel {
     
+    func getPercentageOfForeignPlayers(for team: Team) -> Double {
+        (Double(team.foreignPlayers) / Double(team.foreignPlayers + team.nationalTeamPlayers))
+            .rounded(to: 2)
+    }
+    
+    func getPercentageOfNationalTeamPlayers(for team: Team) -> Double {
+        (Double(team.nationalTeamPlayers) / Double(team.foreignPlayers + team.nationalTeamPlayers))
+            .rounded(to: 2)
+    }
+    
+    func getPercentageOfWins(for team: Team) -> Double {
+        (Double(team.wins) / Double(team.wins + team.losses)).rounded(to: 2)
+    }
+    
+    func getPercentageOfLosses(for team: Team) -> Double {
+        (Double(team.losses) / Double(team.wins + team.losses)).rounded(to: 2)
+    }
+    
     func getPlayers() -> [Player] {
         [Player(id: 0,
                 image: "messi",

@@ -38,10 +38,10 @@ struct TeamTileView: View {
         .background(Color.white)
         .cornerRadius(8)
         .shadow(color: Color.gray.opacity(0.15), radius: 4, x: 0, y: 2)
-//        .overlay(
-//            RoundedRectangle(cornerRadius: 8)
-//              .stroke(Color.blue, lineWidth: 2) // --> to add border
-//        )
+        //        .overlay(
+        //            RoundedRectangle(cornerRadius: 8)
+        //              .stroke(Color.blue, lineWidth: 2) // --> to add border
+        //        )
     }
     
     init(team: Team) {
@@ -63,6 +63,8 @@ struct TeamTileView_Preview: PreviewProvider {
                         name: "Bayern",
                         foreignPlayers: 5,
                         nationalTeamPlayers: 5,
+                        wins: 10,
+                        losses: 15,
                         tournaments: ["1. league", "2. league"],
                         coachName: "Jose Mourinho",
                         foundationDate: "3.4.1899.",
