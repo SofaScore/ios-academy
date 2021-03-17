@@ -12,6 +12,9 @@ struct TeamDetailsView: View {
     private let team: Team
     private let viewModel = TeamDetailsViewModel()
     
+    @State private var showCharts = false
+    @State private var showChartsButtonTitle = "Show charts"
+    
     var body: some View {
         GeometryReader { reader in
             ScrollView {
@@ -35,29 +38,38 @@ struct TeamDetailsView: View {
                         .background(Color.white)
                     }.background(Color.white)
                     
-                    Text("Players ratio")
-                        .font(Font.system(size: 18).bold())
-                        .padding(EdgeInsets(top: 24, leading: 0, bottom: 0, trailing: 0))
+                    Button(showChartsButtonTitle) {
+                        withAnimation {
+                            showChartsButtonTitle = showCharts ? "Show charts" : "Hide charts"
+                            showCharts.toggle()
+                        }
+                    }.padding(EdgeInsets(top: 0, leading: 0, bottom: 12, trailing: 0))
                     
-                    PieChart(data: [viewModel.getPercentageOfForeignPlayers(for: team),
-                                    viewModel.getPercentageOfNationalTeamPlayers(for: team)],
-                             labels: ["Foreign players", "National players"],
-                             colors: [.blue, .yellow],
-                             borderColor: .white,
-                             textColor: .black)
-                        .frame(height: 200, alignment: .center)
-                        .padding(EdgeInsets(top: 24, leading: 0, bottom: 32, trailing: 0))
-                    
-                    Text("W-L ratio").font(Font.system(size: 18).bold())
-                    
-                    PieChart(data: [viewModel.getPercentageOfWins(for: team),
-                                    viewModel.getPercentageOfLosses(for: team)],
-                             labels: ["Wins", "Loses"],
-                             colors: [.green, .red],
-                             borderColor: .white,
-                             textColor: .black)
-                        .frame(height: 200, alignment: .center)
-                        .padding(EdgeInsets(top: 12, leading: 0, bottom: 24, trailing: 0))
+                    if showCharts {
+                        Text("Players ratio")
+                            .font(Font.system(size: 18).bold())
+                            .padding(EdgeInsets(top: 24, leading: 0, bottom: 0, trailing: 0))
+                        
+                        PieChart(data: [viewModel.getPercentageOfForeignPlayers(for: team),
+                                        viewModel.getPercentageOfNationalTeamPlayers(for: team)],
+                                 labels: ["Foreign players", "National players"],
+                                 colors: [.blue, .yellow],
+                                 borderColor: .white,
+                                 textColor: .black)
+                            .frame(height: 200, alignment: .center)
+                            .padding(EdgeInsets(top: 24, leading: 0, bottom: 32, trailing: 0))
+                        
+                        Text("W-L ratio").font(Font.system(size: 18).bold())
+                        
+                        PieChart(data: [viewModel.getPercentageOfWins(for: team),
+                                        viewModel.getPercentageOfLosses(for: team)],
+                                 labels: ["Wins", "Loses"],
+                                 colors: [.green, .red],
+                                 borderColor: .white,
+                                 textColor: .black)
+                            .frame(height: 200, alignment: .center)
+                            .padding(EdgeInsets(top: 12, leading: 0, bottom: 24, trailing: 0))
+                    }
                 }
                 .background(Color.background)
                 .navigationBarTitleDisplayMode(.inline)
