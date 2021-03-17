@@ -39,6 +39,7 @@ struct TeamsView: View {
                     }
                 }.padding(EdgeInsets(top: 20, leading: 20, bottom: 20, trailing: 20))
             }
+            .padding(EdgeInsets(top: 1, leading: 0, bottom: 1, trailing: 0))
             .background(Color.background)
             .navigationBarTitleDisplayMode(.inline)
             .toolbar(content: {
@@ -54,7 +55,7 @@ struct TeamsView: View {
             .navigationBarItems(
                 trailing:
                     Button(action: {
-                        isSheetPresented = true
+                        isSheetPresented.toggle()
                     }, label: {
                         Image("dashboard-layout")
                             .resizable()

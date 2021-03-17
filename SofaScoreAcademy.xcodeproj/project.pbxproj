@@ -14,7 +14,6 @@
 		AF1AD6F525F2738D001E494F /* PlayersViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF1AD6F425F2738D001E494F /* PlayersViewModel.swift */; };
 		AF1AD6F925F4D15D001E494F /* Team.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF1AD6F825F4D15D001E494F /* Team.swift */; };
 		AF1D950725F80791003F1E0B /* PlayerDetailsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF1D950625F80791003F1E0B /* PlayerDetailsView.swift */; };
-		AF2645A625F8EB780044B1B7 /* ScrollingHStackModifier.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF2645A525F8EB780044B1B7 /* ScrollingHStackModifier.swift */; };
 		AF6B46D425F8D49800997B53 /* Color+Theme.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF6B46D325F8D49800997B53 /* Color+Theme.swift */; };
 		AF8B9F8B25F81B9600B4AD7C /* PlayerInfoView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF8B9F8A25F81B9600B4AD7C /* PlayerInfoView.swift */; };
 		AF8B9F8E25F81BA200B4AD7C /* PlayerStatisticsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF8B9F8D25F81BA200B4AD7C /* PlayerStatisticsView.swift */; };
@@ -36,7 +35,6 @@
 		AF1AD6F425F2738D001E494F /* PlayersViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlayersViewModel.swift; sourceTree = "<group>"; };
 		AF1AD6F825F4D15D001E494F /* Team.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Team.swift; sourceTree = "<group>"; };
 		AF1D950625F80791003F1E0B /* PlayerDetailsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlayerDetailsView.swift; sourceTree = "<group>"; };
-		AF2645A525F8EB780044B1B7 /* ScrollingHStackModifier.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScrollingHStackModifier.swift; sourceTree = "<group>"; };
 		AF6B46D325F8D49800997B53 /* Color+Theme.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Color+Theme.swift"; sourceTree = "<group>"; };
 		AF8B9F8A25F81B9600B4AD7C /* PlayerInfoView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlayerInfoView.swift; sourceTree = "<group>"; };
 		AF8B9F8D25F81BA200B4AD7C /* PlayerStatisticsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlayerStatisticsView.swift; sourceTree = "<group>"; };
@@ -108,9 +106,9 @@
 		AFBEBAC525F2493A00B7F9EC /* SofaScoreAcademy */ = {
 			isa = PBXGroup;
 			children = (
+				AFBEBAD625F24A2400B7F9EC /* SupportingFiles */,
 				AF1AD6F725F4D149001E494F /* Models */,
 				AFBEBAD925F24CC000B7F9EC /* Features */,
-				AFBEBAD625F24A2400B7F9EC /* SupportingFiles */,
 			);
 			path = SofaScoreAcademy;
 			sourceTree = "<group>";
@@ -189,7 +187,6 @@
 			isa = PBXGroup;
 			children = (
 				AFC3DF3325F6638A00ED0CE6 /* CircleImage.swift */,
-				AF2645A525F8EB780044B1B7 /* ScrollingHStackModifier.swift */,
 			);
 			path = CommonViews;
 			sourceTree = "<group>";
@@ -275,7 +272,6 @@
 				AF1D950725F80791003F1E0B /* PlayerDetailsView.swift in Sources */,
 				AF1AD6F925F4D15D001E494F /* Team.swift in Sources */,
 				AFBEBADE25F2500B00B7F9EC /* AppDelegate.swift in Sources */,
-				AF2645A625F8EB780044B1B7 /* ScrollingHStackModifier.swift in Sources */,
 				AFC3DF2A25F64ABD00ED0CE6 /* TeamRowView.swift in Sources */,
 				AF1AD6F525F2738D001E494F /* PlayersViewModel.swift in Sources */,
 				AF8B9F8E25F81BA200B4AD7C /* PlayerStatisticsView.swift in Sources */,

@@ -15,8 +15,9 @@ struct PlayerCardView: View {
         VStack(alignment: .leading, spacing: 8) {
             Image("\(player.image)")
                 .resizable()
+                .frame(width: 250, height: 190, alignment: .center)
                 .aspectRatio(contentMode: .fit)
-                .overlay(Rectangle().stroke(Color.white, lineWidth: 1))
+                .overlay(Rectangle().stroke(Color.black, lineWidth: 1))
             Text("\(player.name)")
                 .font(Font.system(size: 18).bold())
                 .foregroundColor(Color.black)
@@ -28,9 +29,9 @@ struct PlayerCardView: View {
                 getFormattedText(for: "Preffered foot: ", with: "\(player.preferredFoot)")
             }.padding(EdgeInsets(top: 4, leading: 16, bottom: 32, trailing: 16))
         }
-        .background(Color.white)
+        .background(Color.background)
         .cornerRadius(8)
-        .shadow(color: Color.gray.opacity(0.15), radius: 4, x: 0, y: 2)
+        .shadow(color: Color.black.opacity(0.5), radius: 4, x: 0, y: 2)
     }
     
     init(player: Player) {

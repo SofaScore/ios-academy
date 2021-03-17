@@ -15,31 +15,34 @@ struct PlayersView: View {
         GeometryReader { reader in
             VStack {
                 Text("\(team.name)")
+                    .padding(EdgeInsets(top: 32, leading: -160, bottom: 0, trailing: 0))
                     .font(Font.system(size: 32).bold())
                     .foregroundColor(Color.black)
-                HStack(alignment: .top, spacing: 30) {
-                    ForEach(team.players, id: \.id) { player in
-                        PlayerCardView(player: player)
-                            .frame(width: 250, height: 400)
+                ScrollView(.horizontal, showsIndicators: false) {
+                    HStack(alignment: .top, spacing: 32) {
+                        ForEach(team.players, id: \.id) { player in
+                            NavigationLink(destination: PlayerDetailsView(player: player)) {
+                                PlayerCardView(player: player)
+                                    .frame(width: 250, height: 400)
+                            }
+                        }
                     }
+                    .padding(EdgeInsets(top: -16, leading: 32, bottom: 32, trailing: 32))
                 }
-                .modifier(ScrollingHStackModifier(items: team.players.count, itemWidth: 250, itemSpacing: 30))
-                .frame(width: reader.size.width, height: reader.size.height - 200)
-                .onDisappear {
-                    
-                }
+                .frame(width: reader.size.width)
+                .background(Color.white)
             }
-            .frame(width: reader.size.width, height: reader.size.height, alignment: .center)
-            .background(Color.background)
-            .navigationBarTitleDisplayMode(.inline)
-            .toolbar(content: {
-                ToolbarItem(placement: .principal) {
-                    Image("\(team.image)")
-                        .resizable()
-                        .frame(width: 32, height: 32)
-                }
-            })
+            .background(Color.white)
         }
+        .background(Color.background)
+        .navigationBarTitleDisplayMode(.inline)
+        .toolbar(content: {
+            ToolbarItem(placement: .principal) {
+                Image("\(team.image)")
+                    .resizable()
+                    .frame(width: 32, height: 32)
+            }
+        })
     }
     
     init(team: Team) {

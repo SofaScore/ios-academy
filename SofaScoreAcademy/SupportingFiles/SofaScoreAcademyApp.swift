@@ -11,6 +11,7 @@ import SwiftUI
 struct SofaScoreAcademyApp: App {
     
     @Environment(\.scenePhase) var scenePhase
+    @UIApplicationDelegateAdaptor(AppDelegate.self) var appDelegate
     
     var body: some Scene {
         WindowGroup {
