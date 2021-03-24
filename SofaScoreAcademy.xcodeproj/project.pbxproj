@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		AF02EF2B260B551500F82DF6 /* TeamsViewModelTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF02EF2A260B551500F82DF6 /* TeamsViewModelTests.swift */; };
+		AF02EF38260B5A2100F82DF6 /* TeamsDataServiceMock.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF02EF37260B5A2100F82DF6 /* TeamsDataServiceMock.swift */; };
 		AF14B5AF260B2F16008A2C94 /* DataService.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF14B5AE260B2F16008A2C94 /* DataService.swift */; };
 		AF14B5B2260B30C8008A2C94 /* TeamsDataService.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF14B5B1260B30C8008A2C94 /* TeamsDataService.swift */; };
 		AF14B5B5260B30F1008A2C94 /* PlayersDataService.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF14B5B4260B30F1008A2C94 /* PlayersDataService.swift */; };
@@ -36,7 +38,21 @@
 		AFDB8795260B385C00CC45E8 /* DataMocker.swift in Sources */ = {isa = PBXBuildFile; fileRef = AFDB8794260B385C00CC45E8 /* DataMocker.swift */; };
 /* End PBXBuildFile section */
 
+/* Begin PBXContainerItemProxy section */
+		AF02EF2D260B551500F82DF6 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = AFBEBABB25F2493A00B7F9EC /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = AFBEBAC225F2493A00B7F9EC;
+			remoteInfo = SofaScoreAcademy;
+		};
+/* End PBXContainerItemProxy section */
+
 /* Begin PBXFileReference section */
+		AF02EF28260B551400F82DF6 /* SofaScoreAcademyTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = SofaScoreAcademyTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		AF02EF2A260B551500F82DF6 /* TeamsViewModelTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TeamsViewModelTests.swift; sourceTree = "<group>"; };
+		AF02EF2C260B551500F82DF6 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		AF02EF37260B5A2100F82DF6 /* TeamsDataServiceMock.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TeamsDataServiceMock.swift; sourceTree = "<group>"; };
 		AF14B5AE260B2F16008A2C94 /* DataService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataService.swift; sourceTree = "<group>"; };
 		AF14B5B1260B30C8008A2C94 /* TeamsDataService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TeamsDataService.swift; sourceTree = "<group>"; };
 		AF14B5B4260B30F1008A2C94 /* PlayersDataService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlayersDataService.swift; sourceTree = "<group>"; };
@@ -69,6 +85,13 @@
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
+		AF02EF25260B551400F82DF6 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		AFBEBAC025F2493A00B7F9EC /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
@@ -79,6 +102,24 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		AF02EF29260B551400F82DF6 /* SofaScoreAcademyTests */ = {
+			isa = PBXGroup;
+			children = (
+				AF02EF36260B5A0000F82DF6 /* Mocks */,
+				AF02EF2A260B551500F82DF6 /* TeamsViewModelTests.swift */,
+				AF02EF2C260B551500F82DF6 /* Info.plist */,
+			);
+			path = SofaScoreAcademyTests;
+			sourceTree = "<group>";
+		};
+		AF02EF36260B5A0000F82DF6 /* Mocks */ = {
+			isa = PBXGroup;
+			children = (
+				AF02EF37260B5A2100F82DF6 /* TeamsDataServiceMock.swift */,
+			);
+			path = Mocks;
+			sourceTree = "<group>";
+		};
 		AF14B5AD260B2ECE008A2C94 /* DataService */ = {
 			isa = PBXGroup;
 			children = (
@@ -121,6 +162,7 @@
 			isa = PBXGroup;
 			children = (
 				AFBEBAC525F2493A00B7F9EC /* SofaScoreAcademy */,
+				AF02EF29260B551400F82DF6 /* SofaScoreAcademyTests */,
 				AFBEBAC425F2493A00B7F9EC /* Products */,
 			);
 			sourceTree = "<group>";
@@ -129,6 +171,7 @@
 			isa = PBXGroup;
 			children = (
 				AFBEBAC325F2493A00B7F9EC /* SofaScoreAcademy.app */,
+				AF02EF28260B551400F82DF6 /* SofaScoreAcademyTests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -253,6 +296,24 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
+		AF02EF27260B551400F82DF6 /* SofaScoreAcademyTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = AF02EF31260B551500F82DF6 /* Build configuration list for PBXNativeTarget "SofaScoreAcademyTests" */;
+			buildPhases = (
+				AF02EF24260B551400F82DF6 /* Sources */,
+				AF02EF25260B551400F82DF6 /* Frameworks */,
+				AF02EF26260B551400F82DF6 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				AF02EF2E260B551500F82DF6 /* PBXTargetDependency */,
+			);
+			name = SofaScoreAcademyTests;
+			productName = SofaScoreAcademyTests;
+			productReference = AF02EF28260B551400F82DF6 /* SofaScoreAcademyTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
 		AFBEBAC225F2493A00B7F9EC /* SofaScoreAcademy */ = {
 			isa = PBXNativeTarget;
 			buildConfigurationList = AFBEBAD225F2493C00B7F9EC /* Build configuration list for PBXNativeTarget "SofaScoreAcademy" */;
@@ -279,6 +340,10 @@
 				LastSwiftUpdateCheck = 1240;
 				LastUpgradeCheck = 1240;
 				TargetAttributes = {
+					AF02EF27260B551400F82DF6 = {
+						CreatedOnToolsVersion = 12.4;
+						TestTargetID = AFBEBAC225F2493A00B7F9EC;
+					};
 					AFBEBAC225F2493A00B7F9EC = {
 						CreatedOnToolsVersion = 12.4;
 					};
@@ -298,11 +363,19 @@
 			projectRoot = "";
 			targets = (
 				AFBEBAC225F2493A00B7F9EC /* SofaScoreAcademy */,
+				AF02EF27260B551400F82DF6 /* SofaScoreAcademyTests */,
 			);
 		};
 /* End PBXProject section */
 
 /* Begin PBXResourcesBuildPhase section */
+		AF02EF26260B551400F82DF6 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		AFBEBAC125F2493A00B7F9EC /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -315,6 +388,15 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
+		AF02EF24260B551400F82DF6 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				AF02EF2B260B551500F82DF6 /* TeamsViewModelTests.swift in Sources */,
+				AF02EF38260B5A2100F82DF6 /* TeamsDataServiceMock.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		AFBEBABF25F2493A00B7F9EC /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -349,7 +431,55 @@
 		};
 /* End PBXSourcesBuildPhase section */
 
+/* Begin PBXTargetDependency section */
+		AF02EF2E260B551500F82DF6 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = AFBEBAC225F2493A00B7F9EC /* SofaScoreAcademy */;
+			targetProxy = AF02EF2D260B551500F82DF6 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
 /* Begin XCBuildConfiguration section */
+		AF02EF2F260B551500F82DF6 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = ACPF4233H8;
+				INFOPLIST_FILE = SofaScoreAcademyTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.SofaScore.iOS.SofaScoreAcademyTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/SofaScoreAcademy.app/SofaScoreAcademy";
+			};
+			name = Debug;
+		};
+		AF02EF30260B551500F82DF6 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = ACPF4233H8;
+				INFOPLIST_FILE = SofaScoreAcademyTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.SofaScore.iOS.SofaScoreAcademyTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/SofaScoreAcademy.app/SofaScoreAcademy";
+			};
+			name = Release;
+		};
 		AFBEBAD025F2493C00B7F9EC /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
@@ -513,6 +643,15 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
+		AF02EF31260B551500F82DF6 /* Build configuration list for PBXNativeTarget "SofaScoreAcademyTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				AF02EF2F260B551500F82DF6 /* Debug */,
+				AF02EF30260B551500F82DF6 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
 		AFBEBABE25F2493A00B7F9EC /* Build configuration list for PBXProject "SofaScoreAcademy" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
