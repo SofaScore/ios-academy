@@ -36,12 +36,12 @@ struct TeamsGridView: View {
             ForEach(teams, id: \.id) { team in
                 if layoutType == .list {
                     NavigationLink(
-                        destination: TeamDetailsView(team: team)) {
+                        destination: TeamDetailsView(teamId: team.id)) {
                         TeamRowView(team: team)
                     }
                 } else {
                     NavigationLink(
-                        destination: TeamDetailsView(team: team)) {
+                        destination: TeamDetailsView(teamId: team.id)) {
                         TeamTileView(team: team)
                     }
                 }

@@ -64,7 +64,10 @@ struct TeamsView: View {
     
     init(viewModel: TeamsViewModel = .init()) {
         _viewModel = StateObject(wrappedValue: viewModel)
-        
+        setupNavigationBar()
+    }
+    
+    func setupNavigationBar() {
         let coloredAppearance = UINavigationBarAppearance()
         coloredAppearance.configureWithTransparentBackground()
         coloredAppearance.backgroundColor = .clear

@@ -10,7 +10,7 @@ import Foundation
 protocol DataService {
     
     func getTeams(completion: @escaping ([Team]) -> Void)
-    func getPlayers(for teamId: Int, completion: @escaping ([Player]) -> Void)
+    func getTeamDetails(for teamId: Int, completion: @escaping (Team) -> Void)
     func getPlayerDetails(for playerId: Int, completion: @escaping (Player) -> Void)
 }
 
@@ -20,7 +20,7 @@ extension DataService {
         print("default implementation")
     }
     
-    func getPlayers(for teamId: Int, completion: @escaping ([Player]) -> Void) {
+    func getTeamDetails(for teamId: Int, completion: @escaping (Team) -> Void) {
         print("default implementation")
     }
     

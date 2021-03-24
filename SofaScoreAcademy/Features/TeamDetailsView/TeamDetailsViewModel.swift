@@ -7,27 +7,19 @@
 
 import Foundation
 
-class TeamDetailsViewModel {
+class TeamDetailsViewModel: ObservableObject {
     
-    func getPercentageOfForeignPlayers(for team: Team) -> Double {
-        (Double(team.foreignPlayers) / Double(team.foreignPlayers + team.nationalTeamPlayers))
-            .rounded(to: 2)
+    @Published var team: Team?
+    
+    private let dataService: DataService
+    
+    init(dataservice: DataService = TeamDetailsDataService()) {
+        self.dataService = dataservice
     }
     
-    func getPercentageOfNationalTeamPlayers(for team: Team) -> Double {
-        (Double(team.nationalTeamPlayers) / Double(team.foreignPlayers + team.nationalTeamPlayers))
-            .rounded(to: 2)
-    }
-    
-    func getPercentageOfWins(for team: Team) -> Double {
-        (Double(team.wins) / Double(team.wins + team.losses)).rounded(to: 2)
-    }
-    
-    func getPercentageOfLosses(for team: Team) -> Double {
-        (Double(team.losses) / Double(team.wins + team.losses)).rounded(to: 2)
-    }
-    
-    func getPlayers() -> [Player] {
-        DataMocker().players
+    func getTeamDetails(for teamId: Int) {
+        dataService.getTeamDetails(for: teamId) { team in
+            self.team = team
+        }
     }
 }
