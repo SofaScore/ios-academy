@@ -21,6 +21,7 @@
 		AF1D950725F80791003F1E0B /* PlayerDetailsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF1D950625F80791003F1E0B /* PlayerDetailsView.swift */; };
 		AF3684ED260B70AE00AB00E5 /* TeamDetailsContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF3684EC260B70AE00AB00E5 /* TeamDetailsContentView.swift */; };
 		AF6B46D425F8D49800997B53 /* Color+Theme.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF6B46D325F8D49800997B53 /* Color+Theme.swift */; };
+		AF7D6749260B8C6400D70E8F /* TeamsDataServiceTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF7D6748260B8C6400D70E8F /* TeamsDataServiceTests.swift */; };
 		AF8B9F8B25F81B9600B4AD7C /* PlayerInfoView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF8B9F8A25F81B9600B4AD7C /* PlayerInfoView.swift */; };
 		AF8B9F8E25F81BA200B4AD7C /* PlayerStatisticsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF8B9F8D25F81BA200B4AD7C /* PlayerStatisticsView.swift */; };
 		AFBEBAC725F2493A00B7F9EC /* SofaScoreAcademyApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = AFBEBAC625F2493A00B7F9EC /* SofaScoreAcademyApp.swift */; };
@@ -67,6 +68,7 @@
 		AF1D950625F80791003F1E0B /* PlayerDetailsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlayerDetailsView.swift; sourceTree = "<group>"; };
 		AF3684EC260B70AE00AB00E5 /* TeamDetailsContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TeamDetailsContentView.swift; sourceTree = "<group>"; };
 		AF6B46D325F8D49800997B53 /* Color+Theme.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Color+Theme.swift"; sourceTree = "<group>"; };
+		AF7D6748260B8C6400D70E8F /* TeamsDataServiceTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TeamsDataServiceTests.swift; sourceTree = "<group>"; };
 		AF8B9F8A25F81B9600B4AD7C /* PlayerInfoView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlayerInfoView.swift; sourceTree = "<group>"; };
 		AF8B9F8D25F81BA200B4AD7C /* PlayerStatisticsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlayerStatisticsView.swift; sourceTree = "<group>"; };
 		AFBEBAC325F2493A00B7F9EC /* SofaScoreAcademy.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SofaScoreAcademy.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -111,6 +113,7 @@
 			children = (
 				AF02EF36260B5A0000F82DF6 /* Mocks */,
 				AF02EF2A260B551500F82DF6 /* TeamsViewModelTests.swift */,
+				AF7D6748260B8C6400D70E8F /* TeamsDataServiceTests.swift */,
 				AF02EF2C260B551500F82DF6 /* Info.plist */,
 			);
 			path = SofaScoreAcademyTests;
@@ -407,6 +410,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				AF02EF2B260B551500F82DF6 /* TeamsViewModelTests.swift in Sources */,
+				AF7D6749260B8C6400D70E8F /* TeamsDataServiceTests.swift in Sources */,
 				AF02EF38260B5A2100F82DF6 /* TeamsDataServiceMock.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
