@@ -91,7 +91,7 @@ struct TeamDetailsView: View {
 
 struct PlayerListView_Preview: PreviewProvider {
     static var previews: some View {
-        let team = TeamsViewModel().getTeams().first!
+        let team = DataMocker().teams.first!
         return TeamDetailsView(team: team)
     }
 }
