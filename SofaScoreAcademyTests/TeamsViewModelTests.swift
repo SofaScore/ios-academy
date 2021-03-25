@@ -20,7 +20,7 @@ class TeamsViewModelTests: XCTestCase {
         sut = nil
     }
     
-    func test_getUsers() throws {
+    func test_getTeams() throws {
         XCTAssertTrue(sut.teams.isEmpty)
         XCTAssertNil(sut.teams.first)
         
