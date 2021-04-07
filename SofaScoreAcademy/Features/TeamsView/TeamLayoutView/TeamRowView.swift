@@ -14,7 +14,7 @@ struct TeamRowView: View {
     var body: some View {
         VStack(alignment: .leading, spacing: 8) {
             HStack(alignment: .center, spacing: 16) {
-                CircleImage(imageName: "\(team.image)")
+                CircleImage(imageUrl: "\(team.image)")
                     .frame(width: 40, height: 40)
                 VStack(alignment: .leading, spacing: 4) {
                     Text("\(team.name)")
@@ -66,7 +66,8 @@ struct TeamRowView_Preview: PreviewProvider {
                         coachName: "Jose Mourinho",
                         foundationDate: "3.4.1899.",
                         country: "Croatia",
-                        players: [])
+                        players: [],
+                        testingValue: "test")
         TeamRowView(team: team)
     }
 }

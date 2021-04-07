@@ -14,9 +14,7 @@ struct TeamTileView: View {
     var body: some View {
         VStack(alignment: .leading, spacing: 8) {
             HStack(alignment: .center, spacing: 8) {
-                Image("\(team.image)")
-                    .resizable()
-                    .aspectRatio(contentMode: .fit)
+                ImageView(withURL: "\(team.image)")
                     .frame(width: 40, height: 40)
                 Text("\(team.name)")
                     .font(Font.system(size: 15).bold())
@@ -69,7 +67,8 @@ struct TeamTileView_Preview: PreviewProvider {
                         coachName: "Jose Mourinho",
                         foundationDate: "3.4.1899.",
                         country: "Croatia",
-                        players: [])
+                        players: [],
+                        testingValue: "test")
         TeamTileView(team: team)
     }
 }

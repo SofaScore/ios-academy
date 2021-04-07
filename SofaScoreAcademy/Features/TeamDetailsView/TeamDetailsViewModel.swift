@@ -10,6 +10,7 @@ import Foundation
 class TeamDetailsViewModel: ObservableObject {
     
     @Published var team: Team?
+    @Published var teamImage: Data?
     
     private let dataService: DataService
     
@@ -18,8 +19,9 @@ class TeamDetailsViewModel: ObservableObject {
     }
     
     func getTeamDetails(for teamId: Int) {
-        dataService.getTeamDetails(for: teamId) { team in
+        dataService.getTeamDetails(for: teamId) { (team, teamImage) in
             self.team = team
+            self.teamImage = teamImage
         }
     }
 }

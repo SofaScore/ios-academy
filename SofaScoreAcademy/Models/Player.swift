@@ -15,7 +15,7 @@ struct Player: Identifiable, Decodable {
     let nationality: String
     let dateOfBirth: String
     let height: Double
-    let preferredFoot: String
-    let position: String
+    let preferredFoot: String?
+    let position: String?
     let shirtNumber: Int
 }
