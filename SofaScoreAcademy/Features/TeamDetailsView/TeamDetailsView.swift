@@ -26,10 +26,10 @@ struct TeamDetailsView: View {
     
     @ViewBuilder
     func getView() -> some View {
-        if let team = viewModel.team {
-            TeamDetailsContentView(team: team)
+        if let team = viewModel.team, let teamImage = viewModel.teamImage {
+            TeamDetailsContentView(team: team, teamImage: teamImage)
         } else {
-            Text("There is no data for this team.")
+            ProgressView()
         }
     }
 }

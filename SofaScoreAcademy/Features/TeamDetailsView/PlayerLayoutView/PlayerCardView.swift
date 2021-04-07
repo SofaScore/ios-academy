@@ -13,11 +13,9 @@ struct PlayerCardView: View {
     
     var body: some View {
         VStack(alignment: .leading, spacing: 8) {
-            Image("\(player.image)")
-                .resizable()
+            ImageView(withURL: "\(player.image)")
+                .cornerRadius(50)
                 .frame(width: 250, height: 190, alignment: .center)
-                .aspectRatio(contentMode: .fit)
-                .overlay(Rectangle().stroke(Color.black, lineWidth: 1))
             Text("\(player.name)")
                 .font(Font.system(size: 18).bold())
                 .foregroundColor(Color.black)

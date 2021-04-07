@@ -21,4 +21,5 @@ struct Team: Identifiable, Decodable {
     let foundationDate: String
     let country: String
     let players: [Player]
+    let testingValue: String
 }

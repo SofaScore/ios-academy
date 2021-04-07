@@ -10,6 +10,7 @@ import SwiftUI
 struct TeamDetailsContentView: View {
     
     private let team: Team
+    private let teamImage: Data
     private let viewModel: TeamDetailsContentViewModel
     
     @State private var showCharts = false
@@ -75,7 +76,7 @@ struct TeamDetailsContentView: View {
                 .navigationBarTitleDisplayMode(.inline)
                 .toolbar(content: {
                     ToolbarItem(placement: .principal) {
-                        Image("\(team.image)")
+                        Image(uiImage: UIImage(data: teamImage)!)
                             .resizable()
                             .frame(width: 32, height: 32)
                     }
@@ -84,8 +85,9 @@ struct TeamDetailsContentView: View {
         }.padding(EdgeInsets(top: 1, leading: 0, bottom: 1, trailing: 0))
     }
     
-    init(team: Team, viewMode: TeamDetailsContentViewModel = .init()) {
+    init(team: Team, teamImage: Data, viewMode: TeamDetailsContentViewModel = .init()) {
         self.team = team
+        self.teamImage = teamImage
         self.viewModel = viewMode
     }
 }
