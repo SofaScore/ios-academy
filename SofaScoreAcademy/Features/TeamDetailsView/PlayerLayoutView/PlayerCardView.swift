@@ -24,7 +24,7 @@ struct PlayerCardView: View {
                 getFormattedText(for: "Nationality: ", with: "\(player.nationality)")
                 getFormattedText(for: "Date of birth: ", with: "\(player.dateOfBirth)")
                 getFormattedText(for: "Height: ", with: "\(player.height)")
-                getFormattedText(for: "Preffered foot: ", with: "\(player.preferredFoot)")
+                getFormattedText(for: "Preffered foot: ", with: "\(player.preferredFoot ?? "")")
             }.padding(EdgeInsets(top: 4, leading: 16, bottom: 32, trailing: 16))
         }
         .background(Color.background)
