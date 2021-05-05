@@ -6,6 +6,7 @@
 //
 
 import SwiftUI
+import Combine
 
 struct TeamsView: View {
     
@@ -13,6 +14,8 @@ struct TeamsView: View {
     
     @State private var isSheetPresented = false
     @State private var layoutType: LayoutType = .grid
+
+    private var refresh: AnyCancellable?
     
     var body: some View {
         NavigationView {
@@ -65,6 +68,12 @@ struct TeamsView: View {
     init(viewModel: TeamsViewModel = .init()) {
         _viewModel = StateObject(wrappedValue: viewModel)
         setupNavigationBar()
+
+        refresh = Timer.publish(every: 15, on: .main, in: .default)
+            .autoconnect()
+            .sink { _ in
+                viewModel.getTeams()
+            }
     }
     
     func setupNavigationBar() {

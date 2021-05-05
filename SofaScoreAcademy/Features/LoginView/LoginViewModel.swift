@@ -6,6 +6,7 @@
 //
 
 import Foundation
+import Combine
 
 class LoginViewModel: ObservableObject {
 
@@ -17,8 +18,11 @@ class LoginViewModel: ObservableObject {
     @Published var isLoggingIn: Bool = false
     @Published var errorMessage: String?
 
+    private var cancellable: AnyCancellable?
+
     init() {
         isLoggedIn = UserDefaults().bool(forKey: Self.loggedInKey)
+        isLoggedIn = true
     }
 
     func login(username: String, password: String) {
@@ -33,19 +37,34 @@ class LoginViewModel: ObservableObject {
             return
         }
         urlRequest.httpBody = httpBody
-        let task = URLSession.shared.dataTask(with: urlRequest) { data, response, error in
-            guard let httpResponse = response as? HTTPURLResponse,
-                  let data = data else { return }
-            print(httpResponse.statusCode)
-            let response = try! JSONDecoder().decode(LoginResponse.self, from: data)
 
-            DispatchQueue.main.async {
-                self.errorMessage = response.errorMessage
-                self.isLoggingIn = false
-                UserDefaults().setValue(response.success, forKey: Self.loggedInKey)
-                self.isLoggedIn = response.success
-            }
-        }
-        task.resume()
+        self.cancellable = URLSession.shared.dataTaskPublisher(for: urlRequest)
+            .map { $0.data }
+            .decode(type: LoginResponse.self, decoder: JSONDecoder())
+            .eraseToAnyPublisher()
+            .sink(receiveCompletion: { _ in },
+                  receiveValue: { response in
+                    DispatchQueue.main.async {
+                        self.errorMessage = response.errorMessage
+                        self.isLoggingIn = false
+                        UserDefaults().setValue(response.success, forKey: Self.loggedInKey)
+                        self.isLoggedIn = response.success
+                    }
+                  })
+
+//        let task = URLSession.shared.dataTask(with: urlRequest) { data, response, error in
+//            guard let httpResponse = response as? HTTPURLResponse,
+//                  let data = data else { return }
+//            print(httpResponse.statusCode)
+//            let response = try! JSONDecoder().decode(LoginResponse.self, from: data)
+//
+//            DispatchQueue.main.async {
+//                self.errorMessage = response.errorMessage
+//                self.isLoggingIn = false
+//                UserDefaults().setValue(response.success, forKey: Self.loggedInKey)
+//                self.isLoggedIn = response.success
+//            }
+//        }
+//        task.resume()
     }
 }
