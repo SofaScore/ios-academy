@@ -12,10 +12,15 @@ struct SofaScoreAcademyApp: App {
     
     @Environment(\.scenePhase) var scenePhase
     @UIApplicationDelegateAdaptor(AppDelegate.self) var appDelegate
+    @StateObject private var viewModel: LoginViewModel
     
     var body: some Scene {
         WindowGroup {
-            TeamsView()
+            if viewModel.isLoggedIn {
+                TeamsView()
+            } else {
+                LoginView()
+            }
         }.onChange(of: scenePhase) { newScenePhase in
             switch scenePhase {
             case .background:
@@ -32,5 +37,6 @@ struct SofaScoreAcademyApp: App {
     
     init() {
         print("App state: init")
+        _viewModel = StateObject(wrappedValue: LoginViewModel.shared)
     }
 }
