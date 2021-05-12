@@ -20,9 +20,11 @@ struct EventRowView: View {
                 if eventStarred {
                     storageService.deleteEvent(eventId: event.id)
                     eventStarred = false
+                    NotificationService.shared.removeNotifications()
                 } else {
                     storageService.saveEvent(event: event)
                     eventStarred = true
+                    NotificationService.shared.scheduleNotification(notificationType: "Whoo!")
                 }
             }, label: {
                 if eventStarred {

@@ -19,6 +19,7 @@
 		48F8C2BD264BE90D001611B2 /* UserDefaultsStorageService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48F8C2BC264BE90D001611B2 /* UserDefaultsStorageService.swift */; };
 		48F8C2C1264BF22D001611B2 /* CoreDataStorageService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48F8C2C0264BF22D001611B2 /* CoreDataStorageService.swift */; };
 		48F8C2C6264BF3D7001611B2 /* Model.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 48F8C2C4264BF3D7001611B2 /* Model.xcdatamodeld */; };
+		48F8C2E3264C08F7001611B2 /* NotificationService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48F8C2E2264C08F7001611B2 /* NotificationService.swift */; };
 		AF02EF2B260B551500F82DF6 /* TeamsViewModelTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF02EF2A260B551500F82DF6 /* TeamsViewModelTests.swift */; };
 		AF02EF38260B5A2100F82DF6 /* TeamsDataServiceMock.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF02EF37260B5A2100F82DF6 /* TeamsDataServiceMock.swift */; };
 		AF14B5AF260B2F16008A2C94 /* DataService.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF14B5AE260B2F16008A2C94 /* DataService.swift */; };
@@ -76,6 +77,7 @@
 		48F8C2BC264BE90D001611B2 /* UserDefaultsStorageService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserDefaultsStorageService.swift; sourceTree = "<group>"; };
 		48F8C2C0264BF22D001611B2 /* CoreDataStorageService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreDataStorageService.swift; sourceTree = "<group>"; };
 		48F8C2C5264BF3D7001611B2 /* Model.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Model.xcdatamodel; sourceTree = "<group>"; };
+		48F8C2E2264C08F7001611B2 /* NotificationService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationService.swift; sourceTree = "<group>"; };
 		AF02EF28260B551400F82DF6 /* SofaScoreAcademyTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = SofaScoreAcademyTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		AF02EF2A260B551500F82DF6 /* TeamsViewModelTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TeamsViewModelTests.swift; sourceTree = "<group>"; };
 		AF02EF2C260B551500F82DF6 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -158,6 +160,14 @@
 				48F8C2C0264BF22D001611B2 /* CoreDataStorageService.swift */,
 			);
 			path = StorageService;
+			sourceTree = "<group>";
+		};
+		48F8C2E1264C08E2001611B2 /* NotificationService */ = {
+			isa = PBXGroup;
+			children = (
+				48F8C2E2264C08F7001611B2 /* NotificationService.swift */,
+			);
+			path = NotificationService;
 			sourceTree = "<group>";
 		};
 		AF02EF29260B551400F82DF6 /* SofaScoreAcademyTests */ = {
@@ -243,10 +253,11 @@
 			children = (
 				AF14B5AD260B2ECE008A2C94 /* DataService */,
 				AFBEBAD925F24CC000B7F9EC /* Features */,
+				48F8C2C4264BF3D7001611B2 /* Model.xcdatamodeld */,
 				AF1AD6F725F4D149001E494F /* Models */,
+				48F8C2E1264C08E2001611B2 /* NotificationService */,
 				48F8C2B5264BDC03001611B2 /* StorageService */,
 				AFBEBAD625F24A2400B7F9EC /* SupportingFiles */,
-				48F8C2C4264BF3D7001611B2 /* Model.xcdatamodeld */,
 			);
 			path = SofaScoreAcademy;
 			sourceTree = "<group>";
@@ -507,6 +518,7 @@
 				4855B64E261D52EC0068EC7C /* ImageView.swift in Sources */,
 				4818F8CD2642230200A7FBD8 /* LoginResponse.swift in Sources */,
 				AF14B5AF260B2F16008A2C94 /* DataService.swift in Sources */,
+				48F8C2E3264C08F7001611B2 /* NotificationService.swift in Sources */,
 				48F8C2B7264BDC36001611B2 /* StorageService.swift in Sources */,
 				AFDB8795260B385C00CC45E8 /* DataMocker.swift in Sources */,
 				AF1AD6F225F27373001E494F /* TeamsViewModel.swift in Sources */,

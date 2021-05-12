@@ -29,6 +29,7 @@ struct SofaScoreAcademyApp: App {
                 print("App state: inactive")
             case .active:
                 print("App state: active")
+                UIApplication.shared.applicationIconBadgeNumber = 0
             @unknown default:
                 print("App state: unknown")
             }
