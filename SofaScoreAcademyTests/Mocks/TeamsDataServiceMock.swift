@@ -22,6 +22,7 @@ class TeamsDataServiceMock: TeamsDataService {
                          coachName: "testCoach",
                          foundationDate: "3.3.2000.",
                          country: "CRO",
-                         players: [])])
+                         players: [],
+                         testingValue: "test")])
     }
 }
