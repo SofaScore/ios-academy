@@ -11,6 +11,25 @@ import Combine
 class TeamDetailsDataService: DataService {
 
     private var cancellable: AnyCancellable?
+    private var teamEvents: AnyCancellable?
+
+    func getTeamEvents(for teamId: Int, completion: @escaping ([Event]) -> Void) {
+        guard let url = URL(string: "https://kvukusic.dev.sofascore.com/api/v1/team/\(teamId)/events") else { return }
+
+        let decoder = JSONDecoder()
+        decoder.keyDecodingStrategy = .convertFromSnakeCase
+
+        self.teamEvents = URLSession.shared.dataTaskPublisher(for: url)
+            .map { $0.data }
+            .decode(type: [Event].self, decoder: decoder)
+            .replaceError(with: [])
+            .eraseToAnyPublisher()
+            .sink { events in
+                DispatchQueue.main.async {
+                    completion(events)
+                }
+            }
+    }
 
     func getTeamDetails(for teamId: Int, completion: @escaping (Team, Data) -> Void) {
         guard let url1 = URL(string: "https://kvukusic.dev.sofascore.com/api/v1/team/\(teamId)/details") else { return }

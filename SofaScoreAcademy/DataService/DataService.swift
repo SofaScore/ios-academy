@@ -11,6 +11,7 @@ protocol DataService {
     
     func getTeams(completion: @escaping ([Team]) -> Void)
     func getTeamDetails(for teamId: Int, completion: @escaping (Team, Data) -> Void)
+    func getTeamEvents(for teamId: Int, completion: @escaping ([Event]) -> Void)
     func getPlayerDetails(for playerId: Int, completion: @escaping (Player) -> Void)
 }
 
@@ -21,6 +22,10 @@ extension DataService {
     }
     
     func getTeamDetails(for teamId: Int, completion: @escaping (Team, Data) -> Void) {
+        print("default implementation")
+    }
+
+    func getTeamEvents(for teamId: Int, completion: @escaping ([Event]) -> Void) {
         print("default implementation")
     }
     

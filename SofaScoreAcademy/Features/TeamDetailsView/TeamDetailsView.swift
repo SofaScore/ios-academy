@@ -16,6 +16,7 @@ struct TeamDetailsView: View {
     var body: some View {
         getView().onAppear(perform: {
             viewModel.getTeamDetails(for: teamId)
+            viewModel.getTeamEvents(for: teamId)
         })
     }
     
@@ -27,7 +28,7 @@ struct TeamDetailsView: View {
     @ViewBuilder
     func getView() -> some View {
         if let team = viewModel.team, let teamImage = viewModel.teamImage {
-            TeamDetailsContentView(team: team, teamImage: teamImage)
+            TeamDetailsContentView(team: team, teamImage: teamImage, events: viewModel.events)
         } else {
             ProgressView()
         }

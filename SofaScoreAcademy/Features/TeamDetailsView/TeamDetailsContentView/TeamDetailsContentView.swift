@@ -11,6 +11,7 @@ struct TeamDetailsContentView: View {
     
     private let team: Team
     private let teamImage: Data
+    private let events: [Event]?
     private let viewModel: TeamDetailsContentViewModel
     
     @State private var showCharts = false
@@ -71,6 +72,10 @@ struct TeamDetailsContentView: View {
                             .frame(height: 200, alignment: .center)
                             .padding(EdgeInsets(top: 12, leading: 0, bottom: 24, trailing: 0))
                     }
+
+                    if let events = events {
+                        EventListView(events: events)
+                    }
                 }
                 .background(Color.background)
                 .navigationBarTitleDisplayMode(.inline)
@@ -85,9 +90,10 @@ struct TeamDetailsContentView: View {
         }.padding(EdgeInsets(top: 1, leading: 0, bottom: 1, trailing: 0))
     }
     
-    init(team: Team, teamImage: Data, viewMode: TeamDetailsContentViewModel = .init()) {
+    init(team: Team, teamImage: Data, events: [Event]?, viewMode: TeamDetailsContentViewModel = .init()) {
         self.team = team
         self.teamImage = teamImage
+        self.events = events
         self.viewModel = viewMode
     }
 }
